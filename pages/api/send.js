@@ -5,9 +5,13 @@ export default async function handler(req, res) {
 
   const { recipient, message } = req.body;
 
+  // چاپ داده‌ها برای بررسی
+  console.log("Recipient: ", recipient);
+  console.log("Message: ", message);
+
   const recipientEmails = {
-    "یاسین (جوجو)": process.env.yasinzare0021@gmail.com,
-    "سعید (سی پی)": process.env.saeedmarandi55@gmail.com,
+    "یاسین (جوجو)": process.env.EMAIL_TO_YASIN,
+    "سعید (سی پی)": process.env.EMAIL_TO_SAEED,
   };
 
   const recipientEmail = recipientEmails[recipient];
@@ -18,8 +22,8 @@ export default async function handler(req, res) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.anonymous4yuo@gmail.com,
-      pass: process.env.zvbw hqap ybos hcdn,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
@@ -33,6 +37,7 @@ export default async function handler(req, res) {
 
     res.status(200).json({ success: true, message: "ایمیل ارسال شد!" });
   } catch (error) {
+    console.error(error);  // چاپ خطا در کنسول
     res.status(500).json({ success: false, message: "خطا در ارسال ایمیل", error });
   }
 }
