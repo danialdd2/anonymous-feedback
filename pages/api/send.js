@@ -10,9 +10,11 @@ export default async function handler(req, res) {
   console.log("Message: ", message);
 
   const recipientEmails = {
-    "یاسین (جوجو)": process.env.EMAIL_TO_YASIN,
-    "سعید (سی پی)": process.env.EMAIL_TO_SAEED,
-  };
+  "یاسین (جوجو)": process.env.EMAIL_TO_YASIN,
+  "سعید (سی پی)": process.env.EMAIL_TO_SAEED,
+  "دانیال": "danialdavaminp@gmail.com",  // اضافه کردن دانیال
+};
+
 
   const recipientEmail = recipientEmails[recipient];
   if (!recipientEmail) {
