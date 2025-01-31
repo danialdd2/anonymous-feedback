@@ -6,8 +6,8 @@ export default async function handler(req, res) {
   const { recipient, message } = req.body;
 
   const recipientEmails = {
-    "یاسین (جوجو)": process.env.EMAIL_TO_YASIN,
-    "سعید (سی پی)": process.env.EMAIL_TO_SAEED,
+    "یاسین (جوجو)": process.env.yasinzare0021@gmail.com,
+    "سعید (سی پی)": process.env.saeedmarandi55@gmail.com,
   };
 
   const recipientEmail = recipientEmails[recipient];
@@ -18,8 +18,8 @@ export default async function handler(req, res) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: process.env.anonymous4yuo@gmail.com,
+      pass: process.env.zvbw hqap ybos hcdn,
     },
   });
 
