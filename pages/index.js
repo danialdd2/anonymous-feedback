@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 export default function Home() {
   const router = useRouter();
   const [search, setSearch] = useState("");
-  const people = ["سعید (سی پی)", "یاسین (جوجو)"];
+  const people = ["سعید (سی پی)", "یاسین (جوجو)", "دانیال"]; // اضافه کردن دانیال به لیست
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
