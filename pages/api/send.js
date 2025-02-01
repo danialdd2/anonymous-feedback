@@ -2,6 +2,7 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
+console.log("Request body:", req.body);  // چاپ کل داده‌های دریافتی
 
   const { recipient, message } = req.body;
 
